@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#avatarBg1)" />
+  <!-- Faculty Silhouette / Placeholder Portrait -->
+  <circle cx="60" cy="46" r="22" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M 28 108 C 28 82, 42 74, 60 74 C 78 74, 92 82, 92 108 Z" fill="#FFFFFF" opacity="0.9"/>
+  <!-- Glasses/Tech Accent -->
+  <circle cx="52" cy="45" r="7" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+  <circle cx="68" cy="45" r="7" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+  <line x1="59" y1="45" x2="61" y2="45" stroke="#1D4ED8" stroke-width="2"/>
+</svg>

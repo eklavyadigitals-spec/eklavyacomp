@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="labBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.02" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="380" fill="url(#labBg)" />
+  
+  <!-- Modern Computer Lab Illustration -->
+  <!-- Desk Row 1 -->
+  <path d="M 40 260 L 460 260 L 480 300 L 20 300 Z" fill="#334155" opacity="0.8"/>
+  
+  <!-- Monitor 1 -->
+  <rect x="70" y="160" width="100" height="70" rx="6" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+  <rect x="76" y="166" width="88" height="58" rx="3" fill="#0F172A"/>
+  <path d="M 82 178 L 110 178 M 82 188 L 130 188 M 82 198 L 100 198" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+  <rect x="110" y="230" width="20" height="20" fill="#475569"/>
+  <rect x="95" y="250" width="50" height="6" rx="2" fill="#64748B"/>
+  
+  <!-- Monitor 2 -->
+  <rect x="200" y="150" width="100" height="70" rx="6" fill="#1E293B" stroke="#EF6126" stroke-width="2"/>
+  <rect x="206" y="156" width="88" height="58" rx="3" fill="#0F172A"/>
+  <path d="M 212 168 L 240 168 M 212 178 L 270 178 M 212 188 L 250 188 M 212 198 L 230 198" stroke="#EF6126" stroke-width="2" stroke-linecap="round"/>
+  <rect x="240" y="220" width="20" height="30" fill="#475569"/>
+  <rect x="225" y="250" width="50" height="6" rx="2" fill="#64748B"/>
+
+  <!-- Monitor 3 -->
+  <rect x="330" y="160" width="100" height="70" rx="6" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+  <rect x="336" y="166" width="88" height="58" rx="3" fill="#0F172A"/>
+  <path d="M 342 178 L 380 178 M 342 188 L 400 188 M 342 198 L 370 198" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  <rect x="370" y="230" width="20" height="20" fill="#475569"/>
+  <rect x="355" y="250" width="50" height="6" rx="2" fill="#64748B"/>
+
+  <!-- Ceiling Lights / High-tech aesthetic -->
+  <line x1="100" y1="40" x2="100" y2="80" stroke="#475569" stroke-width="2"/>
+  <rect x="70" y="80" width="60" height="8" rx="3" fill="#F8FAFC" opacity="0.9"/>
+  <line x1="250" y1="40" x2="250" y2="80" stroke="#475569" stroke-width="2"/>
+  <rect x="220" y="80" width="60" height="8" rx="3" fill="#F8FAFC" opacity="0.9"/>
+  <line x1="400" y1="40" x2="400" y2="80" stroke="#475569" stroke-width="2"/>
+  <rect x="370" y="80" width="60" height="8" rx="3" fill="#F8FAFC" opacity="0.9"/>
+
+  <!-- Overlay Badge -->
+  <rect x="20" y="20" width="160" height="32" rx="6" fill="rgba(15, 23, 42, 0.75)" stroke="#334155"/>
+  <circle cx="36" cy="36" r="5" fill="#EF6126"/>
+  <text x="50" y="40" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Dedicated Lab Stations</text>
+</svg>
