@@ -6,6 +6,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initContactBindings();
   initMobileMenu();
+  initDesktopDropdown();
   initFaqAccordion();
   initHeaderScroll();
 });
@@ -74,6 +75,12 @@ function initContactBindings() {
   document.querySelectorAll('[data-bind="hours-display"]').forEach(el => {
     el.textContent = config.BUSINESS_HOURS;
   });
+
+  // 5. Google Maps Iframe Embed Binding
+  const mapIframe = document.querySelector(".map-embed-pane iframe");
+  if (mapIframe && config.GOOGLE_MAPS_EMBED_URL) {
+    mapIframe.setAttribute("src", config.GOOGLE_MAPS_EMBED_URL);
+  }
 }
 
 /**
@@ -102,6 +109,20 @@ function initMobileMenu() {
   }
 
   toggleBtn.addEventListener("click", () => toggleMenu());
+
+  // Handle mobile sub-nav group accordion toggle
+  const groupToggles = mobileDrawer.querySelectorAll(".mobile-nav-group-toggle");
+  groupToggles.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const group = btn.closest(".mobile-nav-group");
+      if (group) {
+        const isOpen = group.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+    });
+  });
 
   // Close drawer on link click
   const drawerLinks = mobileDrawer.querySelectorAll("a");
@@ -174,3 +195,56 @@ function initHeaderScroll() {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 }
+
+/**
+ * Desktop Navigation Dropdown with Hover Bridge and Debounce
+ */
+function initDesktopDropdown() {
+  const dropdowns = document.querySelectorAll(".nav-item-dropdown");
+  dropdowns.forEach(dropdown => {
+    let leaveTimer = null;
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    
+    dropdown.addEventListener("mouseenter", () => {
+      if (leaveTimer) {
+        clearTimeout(leaveTimer);
+        leaveTimer = null;
+      }
+      dropdown.classList.add("open");
+      if (toggle) toggle.setAttribute("aria-expanded", "true");
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+      leaveTimer = setTimeout(() => {
+        dropdown.classList.remove("open");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      }, 220); // 220ms grace window prevents hover dropping across gap
+    });
+
+    // Touch / Click toggle support
+    if (toggle) {
+      toggle.addEventListener("click", (e) => {
+        if (window.innerWidth > 960) {
+          const isOpen = dropdown.classList.contains("open");
+          if (!isOpen) {
+            e.preventDefault();
+            dropdown.classList.add("open");
+            toggle.setAttribute("aria-expanded", "true");
+          }
+        }
+      });
+    }
+  });
+
+  // Close when clicking anywhere outside
+  document.addEventListener("click", (e) => {
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+}
+

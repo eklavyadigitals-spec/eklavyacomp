@@ -27,7 +27,7 @@ const EKLAVYA_CONFIG = {
   POSTAL_CODE: "431005",
   COUNTRY: "India",
   GOOGLE_MAPS_URL: "https://maps.app.goo.gl/Bx7hT397SziSuRh26",
-  GOOGLE_MAPS_EMBED_URL: "https://maps.google.com/maps?q=Eklavya+Computers+Garkheda+Parisar+Aurangabad&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  GOOGLE_MAPS_EMBED_URL: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.428!2d75.3478!3d19.85537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba27b7c49c193%3A0x8a27ad7f12281f5e!2sEklavya%20Computers!5e0!3m2!1sen!2sin!4v1727930000000",
 
   // Business Hours
   // [ACTION REQUIRED BEFORE LAUNCH: Confirm specific operating hours]
